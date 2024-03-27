@@ -1,2 +1,1 @@
-# exp102
-Experiment for my 102 class in computer science
+# Experiment for comparing the running time of data types and loops
