@@ -30,6 +30,18 @@ class Experiment:
         else:
             return 0
 
+    def iterative_binary_search(self):
+        left, right = 0, len(self.list)
+        while right - left > 1:
+            median = (right + left) // 2
+            if self.list[median] < self.list[median - 1]:
+                right = median
+            else:
+                left = median
+        return self.list[left]
+    
+
+
 if __name__ == "__main__":
     experiment = Experiment()
 
@@ -47,3 +59,8 @@ if __name__ == "__main__":
     print(experiment.searching_method())
     end_time = timeit.default_timer()
     print("Execution time for searching method: ", end_time - start_time)
+
+    start_time = timeit.default_timer()
+    print(experiment.iterative_binary_search())
+    end_time = timeit.default_timer()
+    print("Execution time for binary search: ", end_time - start_time)
