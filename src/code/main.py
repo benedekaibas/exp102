@@ -14,16 +14,18 @@ class Experiment:
         return self.list[item]
 
     def while_loop(self):
-        """Searching with while loop."""
+        length_list = len(self.list)
+        middle_index = (length_list - 1) // 2
         counter = 0
-        limit = len(self.list)
+        while counter < middle_index:
+            counter += 1
+        return self.list[counter]
 
-        while counter <= limit:
-            length_list = len(self.list)
-            item = (length_list - 1) // 2
-        return self.list[item]
+    def time_loops(self):
+        for_loop = self.for_loop()
+        while_loop = self.while_loop()
 
-
+        
 
 if __name__ == "__main__":
     experiment = Experiment()
