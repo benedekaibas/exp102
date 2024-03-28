@@ -1,18 +1,24 @@
 import timeit
-import csv
 
 
 class Experiment:
     def __init__(self) -> None:
         pass
     
-    def for_loop(self):
+    def open_file(self):
         file_path = "numbers.txt"
+        numbers = []
         with open(file_path, "r", encoding = "utf-8") as fh:
-            reader = csv.reader(fh)
-        return reader
+            for line in fh:
+                if " – " in line:
+                    number, _ = line.split(" – ")
+                    numbers.append(int(number.strip()))
+        return numbers
+
+    
 
 
 if __name__ == "__main__":
     experiment = Experiment()
-    print(experiment.for_loop())
+    print(experiment.open_file())
+    
