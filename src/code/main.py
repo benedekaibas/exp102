@@ -15,7 +15,10 @@ class Experiment:
 
     def while_loop(self):
         """Searching with while loop."""
-        while item in self.list:
+        counter = 0
+        limit = len(self.list)
+
+        while counter <= limit:
             length_list = len(self.list)
             item = (length_list - 1) // 2
         return self.list[item]
