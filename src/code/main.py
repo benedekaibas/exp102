@@ -4,20 +4,17 @@ import timeit
 class Experiment:
     def __init__(self) -> None:
         pass
+        self.list = list 
     
-    def open_file(self):
-        file_path = "numbers.txt"
-        numbers = []
-        with open(file_path, "r", encoding = "utf-8") as fh:
-            for line in fh:
-                if " – " in line:
-                    number, _ = line.split(" – ")
-                    numbers.append(int(number.strip()))
-        return numbers
+    def for_loop(self):
+        list = [1,2,3,4,5]
 
+        for item in list:
+            item = len(list) / sum(list)
+        return item
 
 
 if __name__ == "__main__":
     experiment = Experiment()
-    print(experiment.open_file())
+    print(experiment.for_loop())
     
