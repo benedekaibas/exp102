@@ -22,7 +22,13 @@ class Experiment:
         return self.list[counter]
     
     def searching_method(self):
-        return 0
+        length_list = len(self.list)
+        middle_index = (length_list - 1) // 2
+        counter = 0
+        if counter != length_list:
+            return self.list[middle_index]
+        else:
+            return 0
 
 if __name__ == "__main__":
     experiment = Experiment()
@@ -36,3 +42,8 @@ if __name__ == "__main__":
     print(experiment.while_loop())
     end_time = timeit.default_timer()
     print("Execution time for while_loop: ", end_time - start_time)
+
+    start_time = timeit.default_timer()
+    print(experiment.searching_method())
+    end_time = timeit.default_timer()
+    print("Execution time for searching method: ", end_time - start_time)
