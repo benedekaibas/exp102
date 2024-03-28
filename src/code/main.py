@@ -20,14 +20,19 @@ class Experiment:
         while counter < middle_index:
             counter += 1
         return self.list[counter]
-
-    def time_loops(self):
-        for_loop = self.for_loop()
-        while_loop = self.while_loop()
-
-        
+    
+    def searching_method(self):
+        return 0
 
 if __name__ == "__main__":
     experiment = Experiment()
+
+    start_time = timeit.default_timer()
     print(experiment.for_loop())
+    end_time = timeit.default_timer()
+    print("Execution time for for_loop: ", end_time - start_time)
+
+    start_time = timeit.default_timer()
     print(experiment.while_loop())
+    end_time = timeit.default_timer()
+    print("Execution time for while_loop: ", end_time - start_time)
