@@ -15,7 +15,6 @@ class Experiment:
                     numbers.append(int(number.strip()))
         return numbers
 
-    
 
 
 if __name__ == "__main__":
