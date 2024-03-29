@@ -4,7 +4,7 @@ import timeit
 class Experiment:
     def __init__(self) -> None:
         pass
-        self.list = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+        self.list = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19] * 100000
 
     def for_loop(self):
         """Searching with for loop."""
@@ -21,7 +21,7 @@ class Experiment:
             counter += 1
         return self.list[counter]
     
-    def searching_method(self):
+    def statement_search(self):
         length_list = len(self.list)
         middle_index = (length_list - 1) // 2
         counter = 0
@@ -46,21 +46,21 @@ if __name__ == "__main__":
     experiment = Experiment()
 
     start_time = timeit.default_timer()
-    print(experiment.for_loop())
+    #print(experiment.for_loop())
     end_time = timeit.default_timer()
     print("Execution time for for_loop: ", end_time - start_time)
 
     start_time = timeit.default_timer()
-    print(experiment.while_loop())
+    #print(experiment.while_loop())
     end_time = timeit.default_timer()
     print("Execution time for while_loop: ", end_time - start_time)
 
     start_time = timeit.default_timer()
-    print(experiment.searching_method())
+    #print(experiment.statement_search())
     end_time = timeit.default_timer()
     print("Execution time for searching method: ", end_time - start_time)
 
     start_time = timeit.default_timer()
-    print(experiment.iterative_binary_search())
+    #print(experiment.iterative_binary_search())
     end_time = timeit.default_timer()
     print("Execution time for binary search: ", end_time - start_time)
