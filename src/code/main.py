@@ -4,7 +4,10 @@ import timeit
 class Experiment:
     def __init__(self) -> None:
         pass
-        self.list = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19] * 100000
+        self.list = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19] * self.user_input()
+
+    def user_input(self):
+        return int(input("Enter a size you want to increase the list size of: "))
 
     def for_loop(self):
         """Searching with for loop."""
@@ -39,7 +42,6 @@ class Experiment:
             else:
                 left = median
         return self.list[left]
-
 
 if __name__ == "__main__":
     experiment = Experiment()
