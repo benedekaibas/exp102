@@ -39,7 +39,6 @@ class Experiment:
             else:
                 left = median
         return self.list[left]
-    
 
 
 if __name__ == "__main__":
