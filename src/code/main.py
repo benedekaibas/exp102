@@ -2,11 +2,13 @@ import timeit
 
 
 class Experiment:
+    """Experiment class for running the code."""
     def __init__(self) -> None:
         pass
         self.list = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19] * self.user_input()
 
     def user_input(self):
+        """Accepting user input."""
         return int(input("Enter a size you want to increase the list size of: "))
 
     def for_loop(self):
@@ -17,6 +19,7 @@ class Experiment:
         return self.list[item]
 
     def while_loop(self):
+        """Using the while loop for searching the middle element of the given list."""
         length_list = len(self.list)
         middle_index = (length_list - 1) // 2
         counter = 0
@@ -25,6 +28,7 @@ class Experiment:
         return self.list[counter]
     
     def statement_search(self):
+        """Using statement search for searching the middle element of the given list."""
         length_list = len(self.list)
         middle_index = (length_list - 1) // 2
         counter = 0
@@ -34,6 +38,7 @@ class Experiment:
             return 0
 
     def iterative_binary_search(self):
+        """Using binary search for searching the middle element of the given list."""
         left, right = 0, len(self.list)
         while right - left > 1:
             median = (right + left) // 2
